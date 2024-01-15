@@ -1,0 +1,37 @@
+<%- include('header.ejs') %>
+<div class="addNotes">
+    <form action="/submit" method="post">
+    <h2 class="To-Do">Add Your To-Do</h2>
+    <input class="input_bar" type="text" id="addNotes" name="addNotes"><br>
+    <input class="input_button" type="submit" value="Add">
+    <% if(Notes.length != 0) { %>
+        <input style="display: none ;" value="<%= Notes[Notes.length - 1].id + 1 %>" name="id">
+    <% } else { %>
+        <input style="display: none;" value="<%= Notes.length + 1 %>" name="id">
+    <% } %>
+    </form>
+</div>
+<div class="showNotes">
+    <h1 style="margin-left: 5px; margin-bottom: 30px; ">Your To-Do will be listed here 👇</h1>
+        <% for(let i=0;i<Notes.length;i++){ %>
+            <h2 class="notes">
+                <input class="checkbox" type="checkbox">
+                <p>
+                    <%= Notes[i].note %>
+                </p>
+                <form style="width: 100%;" action="/delete" method="post">
+                <input style="display: none;" value="<%= Notes[i].id %>" name="id">
+                <div class="align">
+                <button class="trash">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+                  </svg>
+                  </button>
+                  </form>
+                </div>
+                <br>
+            </h2>
+        <% } %>
+</div>
+<%- include('footer.ejs') %>

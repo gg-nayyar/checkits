@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+.header{
+    display: flex;
+    background-color: #FFD95A;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    color: #4C3D3D;
+    align-items: center;
+}
+.heading{
+    padding-left: 15px;
+}
+.dropbtn {
+    background-color: #FFD95A;
+    color: #4C3D3D;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #FFD95A;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: #4C3D3D;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #FFF7D4;}  
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: #FFD95A;}
+
+body{
+    background-color: #4C3D3D;
+    height: auto;
+    width: 100%;
+}
+
+.addNotes{
+    justify-content: center;
+}
+.To-Do{
+    margin: 0%;
+    padding-top: 100px;
+    text-align: center;
+    color: #FFD95A;
+    font-family: 'Dancing Script', cursive;
+    font-size: 70px;
+}
+.input_bar{
+    margin-top: 40px;
+    margin-left: 15%;
+    width: 70%;
+    height: 30px;
+    background-color: #FFF7D4;
+}
+.input_button{
+    margin-left: 45%;
+    margin-top: 20px;
+    height: 40px;
+    width: 80px;
+    font-family: 'Dancing Script', cursive;
+    font-size: large;
+    background-color: #4C3D3D;
+    color: #FFD95A;
+}
+.showNotes{
+    color: #FFD95A;
+}
+#line_through{
+    text-decoration: none;
+    
+}
+.notes {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.notes {
+    padding-bottom: 3px;
+}
+.checked {
+    text-decoration: line-through;
+    color: #FFF7D4;
+    opacity: 0.4 ;
+}
+.checkbox {
+    margin-right: 10px;
+    margin-left: 5px;
+} 
+.trash{
+    background-color: #4C3D3D;
+    color: #FFF7D4;
+}
+.align{
+    display: flex;
+    justify-content: right;
+    margin-right: 15px;
+}
